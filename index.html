@@ -14,8 +14,35 @@
         <main>
             <div id="loginSection">
                 <h2>Login</h2>
+                <input type="email" id="email" placeholder="Email">
+                <input type="password" id="password" placeholder="Password">
+                <button id="loginBtn">Login</button>
+            </div>
+            <div id="adminSection" style="display: none;">
+                <h2>Admin Panel</h2>
+                <div id="addMemberForm">
+                    <h3>Add Member</h3>
+                    <input type="text" id="memberName" placeholder="Member Name">
+                    <input type="email" id="memberEmail" placeholder="Member Email">
+                    <button id="addMemberBtn">Add Member</button>
+                </div>
+                <div id="membersList">
+                    <h3>Members List</h3>
+                    <ul id="membersListItems"></ul>
+                </div>
+            </div>
+            <div id="memberSection" style="display: none;">
+                <h2>Member Panel</h2>
+                <div id="billReceipts">
+                    <h3>Bill Receipts</h3>
+                    <ul id="billReceiptsList"></ul>
+                </div>
             </div>
         </main>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
