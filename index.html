@@ -3,46 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Management System</title>
+    <title>Elite Gym Management</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-image"></div>
     <div id="app">
         <header>
-            <h1>Gym Management System</h1>
+            <div class="header-content">
+                <div class="line-accent"></div>
+                <h1>ELITE GYM</h1>
+                <div class="line-accent"></div>
+            </div>
         </header>
         <main>
-            <div id="loginSection">
-                <h2>Login</h2>
-                <input type="email" id="email" placeholder="Email">
-                <input type="password" id="password" placeholder="Password">
-                <button id="loginBtn">Login</button>
+            <div id="authSection" class="glass-panel">
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">LOGIN</button>
+                    <button class="tab-btn" data-tab="signup">SIGN UP</button>
+                </div>
+                
+                <form id="loginForm" class="auth-form active">
+                    <h2>ACCESS PORTAL</h2>
+                    <div class="form-group">
+                        <input type="email" id="loginEmail" placeholder="Email" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <button type="submit" id="loginBtn">LOGIN</button>
+                </form>
+
+                <form id="signupForm" class="auth-form">
+                    <h2>NEW ACCOUNT</h2>
+                    <div class="form-group">
+                        <input type="text" id="signupName" placeholder="Full Name" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signupEmail" placeholder="Email" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <button type="submit" id="signupBtn">SIGN UP</button>
+                </form>
             </div>
-            <div id="adminSection" style="display: none;">
-                <h2>Admin Panel</h2>
+
+            <div id="adminSection" class="glass-panel" style="display: none;">
+                <h2>ADMIN CONTROL</h2>
                 <div id="addMemberForm">
-                    <h3>Add Member</h3>
-                    <input type="text" id="memberName" placeholder="Member Name">
-                    <input type="email" id="memberEmail" placeholder="Member Email">
-                    <button id="addMemberBtn">Add Member</button>
+                    <h3>NEW MEMBER REGISTRATION</h3>
+                    <div class="form-group">
+                        <input type="text" id="memberName" placeholder="Member Name" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="memberEmail" placeholder="Member Email" required>
+                        <div class="line-decoration"></div>
+                    </div>
+                    <button id="addMemberBtn">ADD MEMBER</button>
                 </div>
                 <div id="membersList">
-                    <h3>Members List</h3>
+                    <h3>MEMBERS DIRECTORY</h3>
                     <ul id="membersListItems"></ul>
                 </div>
             </div>
-            <div id="memberSection" style="display: none;">
-                <h2>Member Panel</h2>
+            <div id="memberSection" class="glass-panel" style="display: none;">
+                <h2>MEMBER PORTAL</h2>
                 <div id="billReceipts">
-                    <h3>Bill Receipts</h3>
+                    <h3>PAYMENT HISTORY</h3>
                     <ul id="billReceiptsList"></ul>
                 </div>
+                <button id="downloadReceiptBtn" class="action-btn">DOWNLOAD LATEST RECEIPT</button>
             </div>
         </main>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
+
